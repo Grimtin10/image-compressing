@@ -4,11 +4,12 @@ PImage image;
 
 ArrayList<Integer> colors = new ArrayList<Integer>();
 
-int cWidth = 1;
-int cHeight = 1;
+int cWidth = 8;
+int cHeight = 8;
 
 void setup(){
-  size(1920,1080);
+  size(1280,720);
+  //fullScreen();
   image = loadImage("image.png");
   output = createWriter("result.cim");
   image(image,0,0,width,height);
@@ -20,8 +21,17 @@ void setup(){
           temp+=get(x+_x,y+_y);
         }
       }
-      temp=-(temp/(cWidth*cHeight));
+      //println(temp);
+      temp=(temp/(cWidth*cHeight));
       colors.add(temp);
+    }
+  }
+  int w=width/cWidth;
+  for(int i=0;i<colors.size();i++){
+    for(int x=0;x<cWidth;x++){
+      for(int y=0;y<cHeight;x++){
+        set(i%w+x,i/w+y,colors.get(i));
+      }
     }
   }
   output.println(cWidth);
