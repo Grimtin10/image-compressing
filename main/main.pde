@@ -4,14 +4,14 @@ PImage image;
 
 ArrayList<Integer> colors = new ArrayList<Integer>();
 
-int cWidth = 5;
-int cHeight = 5;
+int cWidth = 10;
+int cHeight = 10;
 
 void setup(){
   //size(100,100);
   fullScreen();
-  image = loadImage("image.png");
-  output = createWriter("result.cim");
+  image = loadImage("IMG.JPG");
+  output = createWriter("loader/result.cim");
   image(image,0,0,width,height);
   for(int x=0;x<width;x+=cWidth){
     for(int y=0;y<height;y+=cHeight){
