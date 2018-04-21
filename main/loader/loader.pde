@@ -8,7 +8,7 @@ void setup(){
   for(int i=0;i<image.length-3;i+=3){
     for(int x=0;x<w;x++){
       for(int y=0;y<h;y++){
-        set(((((i/3)/(height/w))*w))+(x),((((i/3)%(height/h))*h))+(y),color(int(image[i+2]),int(image[i]),int(image[i+1])));
+        set(((((i/3)/(height/w))*w))+(x),((((i/3)%(height/h)+y)*h))+(y),color(int(image[i+2]),int(image[i]),int(image[i+1])));
       }
     }
   }

@@ -10,7 +10,7 @@ int cHeight = 10;
 void setup(){
   //size(100,100);
   fullScreen();
-  image = loadImage("image3.png");
+  image = loadImage("image.png");
   output = createWriter("loader/result.cim");
   image(image,0,0,width,height);
   for(int x=0;x<width;x+=cWidth){
